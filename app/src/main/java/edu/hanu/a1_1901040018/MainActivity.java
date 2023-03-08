@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
         ScrollView hiragana = findViewById(R.id.hiraganaHomepage);
         ScrollView katakana = findViewById(R.id.katakanaHomepage);
 
-        Button hiraganaChangeView = findViewById(R.id.hiraganaButton);
-        Button katakanaChangeView = findViewById(R.id.katakanaButton);
+        Button hiraganaChange = findViewById(R.id.hiraganaButton);
+        Button katakanaChange = findViewById(R.id.katakanaButton);
 
         // Click to hiragana page
-        hiraganaChangeView.setOnClickListener(view -> {
+        hiraganaChange.setOnClickListener(view -> {
             hiragana.animate().alpha(1).setDuration(1000);
             hiragana.bringToFront();
             katakana.animate().alpha(0).setDuration(1000);
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             title.setText("Hiragana");
         });
         //Click to katakana page
-        katakanaChangeView.setOnClickListener(view -> {
+        katakanaChange.setOnClickListener(view -> {
             katakana.animate().alpha(1).setDuration(1000);
             katakana.bringToFront();
             hiragana.animate().alpha(0).setDuration(1000);
