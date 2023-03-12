@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int[] audio = new int[]{
+    public static int[] audio = new int[]{
             R.raw.a, R.raw.i, R.raw.u, R.raw.e, R.raw.o, R.raw.ka,
             R.raw.ki, R.raw.ku, R.raw.ke, R.raw.ko, R.raw.sa, R.raw.shi,
             R.raw.su, R.raw.se, R.raw.so, R.raw.ta, R.raw.chi, R.raw.tsu,
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             R.raw.ro, R.raw.wa, R.raw.wo, R.raw.n
     };
 
-    private static int[] hiraganaButton = new int[]{
+    public static int[] hiraganaButton = new int[]{
             R.id.a, R.id.i, R.id.u, R.id.e, R.id.o, R.id.ka,
             R.id.ki, R.id.ku, R.id.ke, R.id.ko, R.id.sa, R.id.shi,
             R.id.su, R.id.se, R.id.so, R.id.ta, R.id.chi, R.id.tsu,
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             R.id.ro, R.id.wa, R.id.wo, R.id.n
     };
 
-    private static int[] katakanaButton = new int[]{
+    public static int[] katakanaButton = new int[]{
             R.id.a1, R.id.i1, R.id.u1, R.id.e1, R.id.o1, R.id.ka1,
             R.id.ki1, R.id.ku1, R.id.ke1, R.id.ko1, R.id.sa1, R.id.shi1,
             R.id.su1, R.id.se1, R.id.so1, R.id.ta1, R.id.chi1, R.id.tsu1,
@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
             R.id.ro1, R.id.wa1, R.id.wo1, R.id.n1
     };
 
-    private final ImageButton[] hiraganaBtn = new ImageButton[hiraganaButton.length];
-    private final ImageButton[] katakanaBtn = new ImageButton[katakanaButton.length];
-    private final MediaPlayer[] mediaPlayers = new MediaPlayer[audio.length];
+    public final ImageButton[] hiraganaBtn = new ImageButton[hiraganaButton.length];
+    public final ImageButton[] katakanaBtn = new ImageButton[katakanaButton.length];
+    public final MediaPlayer[] mediaPlayers = new MediaPlayer[audio.length];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             title.animate().setDuration(1000);
             title.setText("Katakana");
         });
-        // Audio pronunciation
+        // For audio pronunciation
         for (int i = 0; i < mediaPlayers.length ; i++) {
             mediaPlayers[i] = MediaPlayer.create(MainActivity.this, audio[i]);
         }
