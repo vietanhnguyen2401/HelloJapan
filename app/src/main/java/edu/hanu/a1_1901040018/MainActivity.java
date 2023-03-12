@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int[] audio = new int[]{
+    public static int[] audioFile = new int[]{
             R.raw.a, R.raw.i, R.raw.u, R.raw.e, R.raw.o, R.raw.ka,
             R.raw.ki, R.raw.ku, R.raw.ke, R.raw.ko, R.raw.sa, R.raw.shi,
             R.raw.su, R.raw.se, R.raw.so, R.raw.ta, R.raw.chi, R.raw.tsu,
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static ImageButton[] hiraganaButton = new ImageButton[hiraganaButtonPage.length];
     public static ImageButton[] katakanaButton = new ImageButton[katakanaButtonPage.length];
-    public static MediaPlayer[] mediaPlayer = new MediaPlayer[audio.length];
+    public static MediaPlayer[] mediaPlayer = new MediaPlayer[audioFile.length];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         });
         // For audio pronunciation
         for (int i = 0; i < mediaPlayer.length ; i++) {
-            mediaPlayer[i] = MediaPlayer.create(MainActivity.this, audio[i]);
+            mediaPlayer[i] = MediaPlayer.create(MainActivity.this, audioFile[i]);
         }
 
         for (int i = 0; i < hiraganaButtonPage.length; i++) {
