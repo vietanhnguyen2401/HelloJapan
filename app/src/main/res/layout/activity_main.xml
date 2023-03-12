@@ -8,33 +8,34 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/hiraganaButton"
+        android:id="@+id/hiraganaButtonPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="160dp"
-        android:text="Hiragana"
+        android:text="@string/hiragana"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/katakanaButton"
+        app:layout_constraintEnd_toStartOf="@+id/katakanaButtonPage"
         app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.48000002" />
+        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutno2"
+        app:layout_constraintVertical_bias="0.48000002"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
-        android:id="@+id/katakanaButton"
+        android:id="@+id/katakanaButtonPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="160dp"
-        android:text="Katakana"
+        android:text="@string/katakana"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutno2"
         app:layout_constraintVertical_bias="0.482" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/ConstraintLayoutno2"
         android:layout_width="342dp"
         android:layout_height="431dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +44,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ScrollView
-            android:id="@+id/katakanaHomepage"
+            android:id="@+id/katakanaMainPage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0"
@@ -604,7 +605,7 @@
         </ScrollView>
 
         <ScrollView
-            android:id="@+id/hiraganaHomepage"
+            android:id="@+id/hiraganaMainPage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -1171,13 +1172,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/main_title"
+        android:id="@+id/Main_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hiragana"
+        android:text="@string/hiragana"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/ConstraintLayoutno2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

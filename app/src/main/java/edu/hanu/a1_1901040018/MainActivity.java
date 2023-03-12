@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             R.raw.ro, R.raw.wa, R.raw.wo, R.raw.n
     };
 
-    public static int[] hiraganaButton = new int[]{
+    public static int[] hiraganaButtonPage = new int[]{
             R.id.a, R.id.i, R.id.u, R.id.e, R.id.o, R.id.ka,
             R.id.ki, R.id.ku, R.id.ke, R.id.ko, R.id.sa, R.id.shi,
             R.id.su, R.id.se, R.id.so, R.id.ta, R.id.chi, R.id.tsu,
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             R.id.ro, R.id.wa, R.id.wo, R.id.n
     };
 
-    public static int[] katakanaButton = new int[]{
+    public static int[] katakanaButtonPage = new int[]{
             R.id.a1, R.id.i1, R.id.u1, R.id.e1, R.id.o1, R.id.ka1,
             R.id.ki1, R.id.ku1, R.id.ke1, R.id.ko1, R.id.sa1, R.id.shi1,
             R.id.su1, R.id.se1, R.id.so1, R.id.ta1, R.id.chi1, R.id.tsu1,
@@ -44,58 +44,58 @@ public class MainActivity extends AppCompatActivity {
             R.id.ro1, R.id.wa1, R.id.wo1, R.id.n1
     };
 
-    public final ImageButton[] hiraganaBtn = new ImageButton[hiraganaButton.length];
-    public final ImageButton[] katakanaBtn = new ImageButton[katakanaButton.length];
-    public final MediaPlayer[] mediaPlayers = new MediaPlayer[audio.length];
+    public static ImageButton[] hiraganaButton = new ImageButton[hiraganaButtonPage.length];
+    public static ImageButton[] katakanaButton = new ImageButton[katakanaButtonPage.length];
+    public static MediaPlayer[] mediaPlayer = new MediaPlayer[audio.length];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView title = findViewById(R.id.main_title);
-        ScrollView hiragana = findViewById(R.id.hiraganaHomepage);
-        ScrollView katakana = findViewById(R.id.katakanaHomepage);
+        TextView mainTitle = findViewById(R.id.Main_Title);
+        ScrollView hiraganaHomepage = findViewById(R.id.hiraganaMainPage);
+        ScrollView katakanaHomepage = findViewById(R.id.katakanaMainPage);
 
-        Button hiraganaChange = findViewById(R.id.hiraganaButton);
-        Button katakanaChange = findViewById(R.id.katakanaButton);
+        Button hiraganaChange = findViewById(R.id.hiraganaButtonPage);
+        Button katakanaChange = findViewById(R.id.katakanaButtonPage);
 
         // Click to hiragana page
         hiraganaChange.setOnClickListener(view -> {
-            hiragana.animate().alpha(1).setDuration(1000);
-            hiragana.bringToFront();
-            katakana.animate().alpha(0).setDuration(1000);
-            title.animate().setDuration(1000);
-            title.setText("Hiragana");
+            hiraganaHomepage.animate().alpha(1).setDuration(1000);
+            hiraganaHomepage.bringToFront();
+            katakanaHomepage.animate().alpha(0).setDuration(1000);
+            mainTitle.animate().setDuration(1000);
+            mainTitle.setText("Hiragana");
         });
         //Click to katakana page
         katakanaChange.setOnClickListener(view -> {
-            katakana.animate().alpha(1).setDuration(1000);
-            katakana.bringToFront();
-            hiragana.animate().alpha(0).setDuration(1000);
-            title.animate().setDuration(1000);
-            title.setText("Katakana");
+            katakanaHomepage.animate().alpha(1).setDuration(1000);
+            katakanaHomepage.bringToFront();
+            hiraganaHomepage.animate().alpha(0).setDuration(1000);
+            mainTitle.animate().setDuration(1000);
+            mainTitle.setText("Katakana");
         });
         // For audio pronunciation
-        for (int i = 0; i < mediaPlayers.length ; i++) {
-            mediaPlayers[i] = MediaPlayer.create(MainActivity.this, audio[i]);
+        for (int i = 0; i < mediaPlayer.length ; i++) {
+            mediaPlayer[i] = MediaPlayer.create(MainActivity.this, audio[i]);
         }
 
-        for (int i = 0; i < hiraganaButton.length; i++) {
+        for (int i = 0; i < hiraganaButtonPage.length; i++) {
             int mediaIndex = i;
-            int id = hiraganaButton[i];
-            hiraganaBtn[i] = (ImageButton) (findViewById(id));
-            hiraganaBtn[i].setOnClickListener(view -> {
-                mediaPlayers[mediaIndex].start();
+            int id = hiraganaButtonPage[i];
+            hiraganaButton[i] = (ImageButton) (findViewById(id));
+            hiraganaButton[i].setOnClickListener(view -> {
+                mediaPlayer[mediaIndex].start();
             });
         }
 
-        for (int i = 0; i < katakanaButton.length; i++) {
+        for (int i = 0; i < katakanaButtonPage.length; i++) {
             int mediaIndex = i;
-            int id = katakanaButton[i];
-            katakanaBtn[i] = (ImageButton) (findViewById(id));
-            katakanaBtn[i].setOnClickListener(view -> {
-                mediaPlayers[mediaIndex].start();
+            int id = katakanaButtonPage[i];
+            katakanaButton[i] = (ImageButton) (findViewById(id));
+            katakanaButton[i].setOnClickListener(view -> {
+                mediaPlayer[mediaIndex].start();
             });
         }
     }
