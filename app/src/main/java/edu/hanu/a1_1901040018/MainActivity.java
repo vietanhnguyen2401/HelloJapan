@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView mainTitle = findViewById(R.id.Main_Title);
+        TextView main_title = findViewById(R.id.Main_Title);
         ScrollView hiraganaHomepage = findViewById(R.id.hiraganaMainPage);
         ScrollView katakanaHomepage = findViewById(R.id.katakanaMainPage);
 
@@ -65,16 +65,16 @@ public class MainActivity extends AppCompatActivity {
             hiraganaHomepage.animate().alpha(1).setDuration(1000);
             hiraganaHomepage.bringToFront();
             katakanaHomepage.animate().alpha(0).setDuration(1000);
-            mainTitle.animate().setDuration(1000);
-            mainTitle.setText("Hiragana");
+            main_title.animate().setDuration(1000);
+            main_title.setText("Hiragana");
         });
         //Click to katakana page
         katakanaChange.setOnClickListener(view -> {
             katakanaHomepage.animate().alpha(1).setDuration(1000);
             katakanaHomepage.bringToFront();
             hiraganaHomepage.animate().alpha(0).setDuration(1000);
-            mainTitle.animate().setDuration(1000);
-            mainTitle.setText("Katakana");
+            main_title.animate().setDuration(1000);
+            main_title.setText("Katakana");
         });
         // For audio pronunciation
         for (int i = 0; i < mediaPlayer.length ; i++) {
